@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Twimoji",
+  "version": "1.0",
+  "description": "Enables choosing an emoji on Twitter by typing :<letters>",
+  "icons": {
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+    },
+    "default_popup": "popup.html"
+  }
+}
